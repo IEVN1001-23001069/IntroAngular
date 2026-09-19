@@ -6,34 +6,40 @@
                     Filtrar por: 
                 </div>
                 <div class="col-md-4">
-                    <input type="text" class="from-control"
+                    <input [(ngModel)]="listFilter" type="text" class="form-control"
                     placeholder="Ingrese nombre del Heroe">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md 6">
-                    <h3>Filtro: </h3>
+                    <h3>Filtro:{{listFilter}} </h3>
                 </div>
             </div>
             <div class="table-responsive">
                 <div class="table-responsive">
-                    <table class="table-table-striped">
+                    <table *ngIf="heroes.length>0" class="table table-striped"> 
                         <thead>
                             <tr>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
+                                <th><button (click)="showImage()" class="btn btn-primary">
+                                    {{muestraImage?'Oculta ':'Muestra '}}Imagen
+                                </button></th>
+                                <th>Nombre | uppercase</th>
                                 <th>Descrición</th>
                                 <th>Raza</th>
                                 <th>Ki</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>5</td>
+                            <tr *ngFor="let heroe of heroes">
+                                <td><img *ngIf="muestraImage"
+                                    [src]="heroe.imagen"
+                                    [style.width.px]="imageWidth"
+                                    [style.margin.px]="imageMargin"
+                                    ></td>
+                                <td>{{heroe.nombre}}</td>
+                                <td>{{heroe.description}}</td>
+                                <td>{{heroe.race}}</td>
+                                <td>{{heroe.ki}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,3 +49,13 @@
         </div>
     </div>
 </div>
+
+<!--ngIF y ngFor son directivas de Angular que permiten trabajar propiedades dentro de los elementos de html-->
+<!--Enlace de propiedad de angular por ejemplo en el  [src] en la linea 32 del códig, permiten enlazar porpiedades o campos de propiedad que enlazamos en la lista-->
+<!--Enlace de evento, enlazar el metodo con el evento de angular asociado (clicK)="showImage()"-->
+<!--Creación de if ternario {{muestraImage?'Oculta ':'Muestra '}}     ?'':''   es el formato del if  -->
+<!--Directiva enlace de evento bidireccional [(ngModule1)]="listFilter" utilizamos tanto corechetes como parentesis para la creación del enlace bidireccional  [()]-->
+<!--dos formas de trabajar formularios en angular: formularios de template y formularios de reactivos-->
+<!--Un Pipie en angular es una función especial que sirve para transformar y formatear datos de manera visual directamente en las plantillas HTML, sin cambiar el valor original dentro del código
+para crear un pipe nos vamos a cmd y colocamos ng g p heroes/heroesFilter este pipe nos permitira generar un filtrado
+agregamos la etiqueta --skip-tests=true  nos va omitir el archivo de pruebas .spect-->
