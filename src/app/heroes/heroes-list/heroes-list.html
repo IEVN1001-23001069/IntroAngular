@@ -30,7 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let heroe of heroes">
+                            <tr *ngFor="let heroe of heroes | heroesFilter:listFilter">
                                 <td><img *ngIf="muestraImage"
                                     [src]="heroe.imagen"
                                     [style.width.px]="imageWidth"
@@ -56,6 +56,6 @@
 <!--Creación de if ternario {{muestraImage?'Oculta ':'Muestra '}}     ?'':''   es el formato del if  -->
 <!--Directiva enlace de evento bidireccional [(ngModule1)]="listFilter" utilizamos tanto corechetes como parentesis para la creación del enlace bidireccional  [()]-->
 <!--dos formas de trabajar formularios en angular: formularios de template y formularios de reactivos-->
-<!--Un Pipie en angular es una función especial que sirve para transformar y formatear datos de manera visual directamente en las plantillas HTML, sin cambiar el valor original dentro del código
+<!--Un Pipe en angular es una función especial que sirve para transformar y formatear datos de manera visual directamente en las plantillas HTML, sin cambiar el valor original dentro del código
 para crear un pipe nos vamos a cmd y colocamos ng g p heroes/heroesFilter este pipe nos permitira generar un filtrado
 agregamos la etiqueta --skip-tests=true  nos va omitir el archivo de pruebas .spect-->
