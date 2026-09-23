@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Formulario</h2>
+                <form> 
+                <div class="form-group pt-4">
+                    <label for="valor1">Base</label>
+                    <input [(ngModel)]='valor1' name="valor1" type="text" class="form-control" id="valor1"
+                    placeholder="Ingrese la Base">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="valor2">Altura</label>
+                    <input [(ngModel)]='valor2' name="valor2" type="text" class="form-control" id="valor2"
+                    placeholder="Ingrese el Altura">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="radio">Radio</label>
+                    <input [(ngModel)]='radio' name="radio" type="text" class="form-control" id="radio"
+                    placeholder="Ingrese el radio">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="perimetro">Perimetro</label>
+                    <input [(ngModel)]='perimetro' name="perimetro" type="text" class="form-control" id="perimetro"
+                    placeholder="Ingrese el perimetro">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="apotema">Apotema</label>
+                    <input [(ngModel)]='apotema' name="apotema" type="text" class="form-control" id="apotema"
+                    placeholder="Ingrese el apotema">
+                </div>
+
+                <br>
+
+                <div class="form-check">
+                <input [(ngModel)]='operacionSeleccionada' class="form-check-input" type="radio" name="grupoOperaciones" id="opcionsum" value="rectangulo" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Rectangulo
+                </label>
+                </div>
+                <div class="form-check">
+                <input [(ngModel)]='operacionSeleccionada' class="form-check-input" type="radio" name="grupoOperaciones" id="opcionrestar" value="triangulo" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Triangulo
+                </label>
+                </div>
+                <div class="form-check">
+                <input [(ngModel)]='operacionSeleccionada' class="form-check-input" type="radio" name="grupoOperaciones" id="opciondividir" value="circulo" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Circulo
+                </label>
+                </div>
+                <div class="form-check">
+                <input [(ngModel)]='operacionSeleccionada' class="form-check-input" type="radio" name="grupoOperaciones" id="opcionmultiplicar" value="pentagono" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                 Pentagono
+                </label>
+                </div>
+
+                <button (click)="calcular()" type="button" class="btn btn-primary">
+                    Calcular 
+                </button>
+            </form>
+            </div>
+            <div class="col-6">
+                <h2>Resultado: {{resultado}}</h2>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
+

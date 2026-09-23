@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Formulario</h2>
+                <form> 
+                <div class="form-group pt-4">
+                    <label for="frase">Frase</label>
+                    <input [(ngModel)]='frase' name="frase" type="text" class="form-control" id="frase"
+                    placeholder="Ingrese la Frase">
+                </div>
+                
+                
+
+                <button (click)="analizar()" type="button" class="btn btn-primary">
+                    Analizar 
+                </button>
+            </form>
+            </div>
+            <div class="col-6">
+                <h2>Número de Vocales: {{numVocales}}</h2>
+                <h2>Vocales: {{listaVocales}}</h2>
+                <h2>Número de Consonantes: {{numConsonantes}}</h2>
+                <h2>Consonantes: {{listaConsonantes}}</h2>
+                <h2>Palíndromo: {{esPalindromoTexto}}</h2>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
+

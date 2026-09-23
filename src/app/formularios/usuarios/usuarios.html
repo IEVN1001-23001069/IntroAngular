@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Formulario</h2>
+                <form> 
+                <div class="form-group pt-4">
+                    <label for="usuari">Usuario</label>
+                    <input [(ngModel)]='usuarioCorrecto' name="usuarioCorrecto" type="text" class="form-control" id="usuarioCorrecto"
+                    placeholder="Ingrese el Usuario">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="contraseniaCorrecta">Contraseña</label>
+                    <input [(ngModel)]='contraseniaCorrecta' name="contraseniaCorrecta" type="text" class="form-control" id="contraseniaCorrecta"
+                    placeholder="Ingrese la contraseña">
+                </div>
+                
+
+                <button (click)="validar()" type="button" class="btn btn-primary">
+                    Calcular 
+                </button>
+            </form>
+            </div>
+            <div class="col-6">
+                <h2>{{mensaje}}</h2>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
