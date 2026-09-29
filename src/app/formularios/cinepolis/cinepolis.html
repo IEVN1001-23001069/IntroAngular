@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolis</title>
+</head>
+<body style="background-image: url('https://reditery.com/images/branding/blog/cinepolis_nuevo_logotipo_003.png'); background-size: cover; background-position: center; ">
+    
+<div class="container my-4">
+  <div class="card bg-transparent text-white">
+    <div class=" bg-primary card-header text-center">
+      <h2>Cinépolis</h2>
+    </div>
+    
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="card text-dark h-100">
+            <div class="card-header font-italic fw-bold">
+              Entradas
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3 row">
+                  <label class="col-sm-5 col-form-label">Nombre:</label>
+                  <div class="col-sm-7">
+                    <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Ingresa el nombre:">
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <label class="col-sm-5 col-form-label">Cantidad Compradores:</label>
+                  <div class="col-sm-7">
+                    <input type="text" [(ngModel)]="cantidadCompradoras" name="cantidad" class="form-control" placeholder="Ingresa la cantidad:">
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <label class="col-sm-5 col-form-label">Tarjeta Cineco:</label>
+                  <div class="col-sm-7 d-flex align-items-center gap-3">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" [(ngModel)]="tarjetaCineco" name="tarjetas" id="tarjetaSi" value="si">
+                      <label class="form-check-label" for="tarjetaSi">Sí</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" [(ngModel)]="tarjetaCineco" name="tarjetas" id="tarjetaNo" value="no">
+                      <label class="form-check-label" for="tarjetaNo">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3 row">
+                  <label class="col-sm-5 col-form-label">Cantidad de boletas:</label>
+                  <div class="col-sm-7">
+                    <input type="text" [(ngModel)]="cantidadBoletos" name="cantidadBoletos" class="form-control" placeholder="Cantidad de boletos:">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card text-dark h-100">
+            <div class="card-header font-italic fw-bold">
+              Salidas
+            </div>
+            <div class="card-body">
+              <div class="mb-3 row">
+                <label class="col-sm-5 col-form-label">Valor a Pagar:</label>
+                <div class="col-sm-7">
+                  <input type="text" [value]="valorpagar || ''" class="form-control" readonly> 
+                </div>
+              </div>
+
+              <div class="alert alert-warning mt-3" *ngIf="mensaje">
+                {{mensaje}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="card text-dark">
+            <div class="card-header font-italic fw-bold">
+              Acciones
+            </div>
+            <div class="card-body text-center">
+              <button (click)="calcular()" class="btn btn-light border px-4">
+                Calcular
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
